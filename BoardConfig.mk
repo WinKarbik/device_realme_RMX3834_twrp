@@ -101,10 +101,10 @@ BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
-BOARD_SUPER_PARTITION_SIZE :=9126805504
+BOARD_SUPER_PARTITION_SIZE := 9126805504
 BOARD_SUPER_PARTITION_GROUPS := realme_dynamic_partitions
 BOARD_REALME_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext vendor product
-BOARD_REALME_DYNAMIC_PARTITIONS_SIZE :=9122611200
+BOARD_REALME_DYNAMIC_PARTITIONS_SIZE := 9122611200
 
 # Platform
 TARGET_BOARD_PLATFORM := ums9230
@@ -145,7 +145,6 @@ TW_EXCLUDE_DEFAULT_USB_INIT := true
 #Brightness
 TW_DEFAULT_BRIGHTNESS := 1400
 TW_MAX_BRIGHTNESS := 2048
-TW_DEVICE_VERSION := Git_FASTBOOT
 
 # Crypto 
 TW_INCLUDE_CRYPTO := true
@@ -163,64 +162,3 @@ TW_CUSTOM_CPU_TEMP_PATH := sys/devices/virtual/thermal/thermal_zone16/temp
 #prop
 TW_INCLUDE_LIBRESETPROP := true
 TW_INCLUDE_RESETPROP := true
-
-#additional lib for fix decryption
-TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libtrusty \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libtrusty \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libgatekeeper \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libgatekeeper \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.security.keymint-V2-ndk \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/android.hardware.security.keymint-V2-ndk \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.security.secureclock-V1-ndk \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/android.hardware.security.secureclock-V1-ndk  \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.security.sharedsecret-V1-ndk \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/android.hardware.security.sharedsecret-V1-ndk  \
-    $(TARGET_OUT_SHARED_LIBRARIES)/lib_android_keymaster_keymint_utils \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/lib_android_keymaster_keymint_utils  \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymint \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libkeymint  \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster_messages \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libkeymaster_messages \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.gatekeeper@1.0 \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/android.hardware.gatekeeper@1.0 \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libcppbor_external \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libcppbor_external \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster_messages \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libkeymaster_messages \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster_portable \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libkeymaster_portable \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libpuresoftkeymasterdevice \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libcppcose_rkp \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libcppcose_rkp \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libsoft_attestation_cert \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libsoft_attestation_cert \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libgatekeeper.so \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libgatekeeper.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.security.keymint-V2-ndk.so \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/android.hardware.security.keymint-V2-ndk.so\
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.security.sharedsecret-V1-ndk.so \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/android.hardware.security.sharedsecret-V1-ndk.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.security.secureclock-V1-ndk.so \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/android.hardware.security.secureclock-V1-ndk.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/lib_android_keymaster_keymint_utils.so \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/lib_android_keymaster_keymint_utils.so  \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymint.so \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libkeymint.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster_messages.so \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libkeymaster_messages.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.gatekeeper@1.0.so \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/android.hardware.gatekeeper@1.0.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libcppbor_external.so \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libcppbor_external.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster_messages.so \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libkeymaster_messages.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster_portable.so \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libkeymaster_portable.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libcppcose_rkp.so \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libcppcose_rkp.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libsoft_attestation_cert.so \
-    $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libsoft_attestation_cert.so \
