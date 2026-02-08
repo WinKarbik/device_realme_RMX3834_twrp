@@ -203,3 +203,36 @@ on property:sys.usb.configfs=1 && property:sys.usb.config=vser
 
 on property:ro.bootmode=factorytest && property:ro.debuggable=0
     setprop sys.usb.config vser
+
+on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
+    write /proc/bootprof "crypto: install_keyring (crypto.ready=1)"
+    install_keyring
+    setprop crypto.ready 1
+
+on property:crypto.ready=1
+    write /proc/bootprof "crypto: start vendor.keymint"
+    start vendor.keymint-unisoc-2.0
+
+on property:vendor.sys.listener.registered=true
+    start vendor.gatekeeper-1-0
+    start vendor.keymint-unisoc-2.0
+
+on property:hwservicemanager.ready=true
+    start vendor.gatekeeper-1-0
+    start vendor.keymint-unisoc-2.0
+
+on property:ro.crypto.state=unsupported
+    stop vendor.gatekeeper-1-0
+    stop vendor.keymint-unisoc-2.0
+
+on property:ro.crypto.state=unencrypted
+    stop vendor.gatekeeper-1-0
+    stop vendor.keymint-unisoc-2.0
+
+on property:twrp.all.users.decrypted=true
+    stop vendor.gatekeeper-1-0
+    stop vendor.keymint-unisoc-2.0
+
+on property:crypto.ready=0
+    stop vendor.gatekeeper-1-0
+    stop vendor.keymint-unisoc-2.0
