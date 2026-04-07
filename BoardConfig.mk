@@ -76,7 +76,7 @@ BOARD_DTB_SIZE := 123569
 BOARD_DTB_OFFSET := 0x01f00000
 BOARD_HEADER_SIZE := 2128
 BOARD_VENDOR_CMDLINE := "console=ttyS1,115200n8 bootconfig"
-BOARD_BOOTCONFIG += androidboot.hardware=qcom androidboot.memcg=1 androidboot.usbcontroller=a600000.dwc3 androidboot.load_modules_parallel=false androidboot.hypervisor.protected_vm.supported=true androidboot.vendor.qspa=true androidboot.serialconsole=0 androidboot.selinux=permissive
+BOARD_BOOTCONFIG += androidboot.hardware=ums9230_hulk androidboot.selinux=permissive
 BOARD_KERNEL_CMDLINE += bootconfig
 
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
