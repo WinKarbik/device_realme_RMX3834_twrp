@@ -24,6 +24,15 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 # Inherit from RMX3261 device
 $(call inherit-product, device/realme/RMX3834/device.mk)
 
+PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.userspace.snapshots.enabled=true
+PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.io_uring.enabled=true
+PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.compression.xor.enabled=true
+PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.batch_writes=true
+PRODUCT_VENDOR_PROPERTIES += ro.virtual_ab.compression.threads=true
+
+# Configure emulated_storage.mk
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
 PRODUCT_DEVICE := RMX3834
 PRODUCT_NAME := twrp_RMX3834
 PRODUCT_BRAND := realme
