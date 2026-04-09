@@ -34,7 +34,6 @@ AB_OTA_PARTITIONS += \
     odm_dlkm \
     vbmeta \
     vendor_boot \
-    system_dlkm \
     vendor_dlkm \
     vbmeta_system \
     vbmeta_vendor
@@ -117,7 +116,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 BOARD_SUPER_PARTITION_SIZE := 9126805504
 BOARD_SUPER_PARTITION_GROUPS := realme_dynamic_partitions
-BOARD_REALME_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_dlkm system_ext vendor vendor_dlkm 
+BOARD_REALME_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_ext vendor vendor_dlkm 
 BOARD_REALME_DYNAMIC_PARTITIONS_SIZE := 9122611200
 
 # Platform
