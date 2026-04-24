@@ -76,7 +76,8 @@ BOARD_RAMDISK_OFFSET := 0x05400000
 BOARD_DTB_SIZE := 123569
 BOARD_DTB_OFFSET := 0x01f00000
 BOARD_HEADER_SIZE := 2128
-BOARD_VENDOR_CMDLINE := console=ttyS1,115200n8 bootconfig
+BOARD_VENDOR_CMDLINE := "console=ttyS1,115200n8 bootconfig bootconfig"
+BOARD_BOOTCONFIG += androidboot.hardware=ums9230_hulk androidboot.dtbo_idx=0 androidboot.selinux=permissive
 BOARD_KERNEL_CMDLINE += bootconfig
 
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
