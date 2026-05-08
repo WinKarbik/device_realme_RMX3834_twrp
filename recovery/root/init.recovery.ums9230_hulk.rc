@@ -6,7 +6,6 @@ on post-fs
 
 on boot
     start health-hal-2-1
-    start vendor.keymint-unisoc-2.0
 
 on early-fs
     start vold
@@ -29,6 +28,10 @@ service keystore /system/bin/keystore /tmp/misc/keystore
 
 on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
     install_keyring
+    setprop crypto.ready 1
+
+on property:crypto.ready=1
+    start vendor.keymint-unisoc-2.0
 
 on property:vendor.sys.listener.registered=true
     start vendor.gatekeeper-1-0
