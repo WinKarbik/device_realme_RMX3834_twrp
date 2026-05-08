@@ -32,6 +32,7 @@ AB_OTA_PARTITIONS += \
     vendor \
     odm \
     odm_dlkm \
+	system_dlkm \
     vbmeta \
     vendor_boot \
     vendor_dlkm \
@@ -105,6 +106,7 @@ BOARD_USES_SYSTEM_EXTIMAGE    := true
 BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_SYSTEM_DLKMIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
@@ -114,7 +116,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 BOARD_SUPER_PARTITION_SIZE := 9126805504
 BOARD_SUPER_PARTITION_GROUPS := realme_dynamic_partitions
-BOARD_REALME_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_ext vendor vendor_dlkm 
+BOARD_REALME_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_dlkm system_ext vendor vendor_dlkm 
 BOARD_REALME_DYNAMIC_PARTITIONS_SIZE := 9122611200
 
 # Platform
