@@ -15,6 +15,7 @@
 #
 
 DEVICE_PATH := device/realme/RMX3834
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Build Hack
 BUILD_BROKEN_DUP_RULES := true
