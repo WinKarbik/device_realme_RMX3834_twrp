@@ -34,6 +34,13 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
+# Fastboot
+PRODUCT_PACKAGES += \
+    libion.recovery \
+    android.hardware.fastboot@1.0-impl-mock \
+    android.hardware.fastboot@1.0-impl-mock.recovery \
+	fastbootd
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
@@ -46,12 +53,26 @@ PRODUCT_PACKAGES += \
     update_verifier \
     update_engine_sideload
 
-#fastboot
+# Keymaster
 PRODUCT_PACKAGES += \
-    libion.recovery \
-    android.hardware.fastboot@1.0-impl-mock \
-    android.hardware.fastboot@1.0-impl-mock.recovery \
-	fastbootd
+    android.hardware.keymaster@4.0.vendor \
+    android.hardware.keymaster@4.1 \
+
+# Keymint
+PRODUCT_PACKAGES += \
+    android.hardware.security.keymint \
+    android.hardware.security.secureclock \
+    android.hardware.security.sharedsecret \
+
+# Keystore2
+PRODUCT_PACKAGES += \
+    android.system.keystore2 \
+
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0.vendor \
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-service \
 
 # Fix missing json configs
 PRODUCT_COPY_FILES += $(TOP)/system/core/libprocessgroup/profiles/task_profiles.json:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/task_profiles.json
