@@ -1,8 +1,10 @@
 #add for board init.rc for recovery mode
 import /init.recovery.common.rc
 
-on boot
+on post-fs
     start boot-hal-1-2
+
+on boot
     start health-hal-2-1
     start vendor.keymint-unisoc-2.0
 
