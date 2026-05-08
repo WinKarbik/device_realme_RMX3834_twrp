@@ -4,8 +4,14 @@ import /init.recovery.common.rc
 on boot
     start boot-hal-1-2
     start health-hal-2-1
-    
+    start vendor.keymint-unisoc-2.0
+
+on early-fs
+    start vold
+
 on fs
+    mount_all ./first_stage_ramdisk/fstab.ums9230_hulk --late
+
 service keystore_auth /system/bin/keystore_auth
     oneshot
     user system
@@ -23,17 +29,17 @@ on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
     install_keyring
 
 on property:vendor.sys.listener.registered=true
-    start vendor.keymint-unisoc-2.0
     start vendor.gatekeeper-1-0
+    start vendor.keymint-unisoc-2.0
 
 on property:property:ro.crypto.state=encrypted
-    start vendor.keymint-unisoc-2.0
     start vendor.gatekeeper-1-0
+    start vendor.keymint-unisoc-2.0
 
 on property:property:hwservicemanager.ready=true
-    start vendor.keymint-unisoc-2.0
     start vendor.gatekeeper-1-0
+    start vendor.keymint-unisoc-2.0
 
 on property:ro.crypto.state=unsupported || property:ro.crypto.state=unencrypted || property:twrp.decrypt.done=true
-    stop vendor.keymint-unisoc-2.0
     stop vendor.gatekeeper-1-0
+    stop vendor.keymint-unisoc-2.0
