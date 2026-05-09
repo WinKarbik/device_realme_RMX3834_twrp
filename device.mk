@@ -18,7 +18,7 @@ LOCAL_PATH := device/realme/RMX3834
 
 # Virtual A/B
 ENABLE_VIRTUAL_AB := true
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression_with_xor.mk)
 
 # API
 PRODUCT_SHIPPING_API_LEVEL := 33
